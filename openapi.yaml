@@ -1,0 +1,55 @@
+openapi: 3.0.1
+info:
+  title: Lean
+  description: Plugin for proving user-specified theorems automatically by interacting with Lean. The user enters information of how to find a theorem (e.g., theorem name and file path). Based on the user's input, ChatGPT first initializes the proof search with the given theorem as the initial state. Then, ChatGPT will first explain the choice for the next tactic step using LaTeX and run that tactic step to the state. If the current state is not promising, ChatGPT can backtrack to previous states by decrementing the "state_id" parameter. If applying tactics to the current state specified by the "state_id" parameter returns an error message, ChatGPT should explain the error, and if repetitive errors occur, ChatGPT should decrement the "state_id" parameter and try a different approach on a previous state. The theorem is successfully proved if there is no unsolved goal in the current state.
+  version: 'v1'
+servers:
+  - url: PLUGIN_HOSTNAME
+paths:
+  /initialize_proof_search:
+    post:
+      operationId: initialize_proof_search
+      summary: Given the theorem name and file path of a Lean theorem in mathlib, initialize the proof search. The response includes the initial state and its state ID.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InitializeProofSearchRequest'
+      responses:
+        "200":
+          description: OK
+  /run_tactic:
+    post:
+      operationId: run_tactic
+      summary: Run a tactic on a state (specified by its state ID), assuming the proof search has been initialized and some state is available. The response is either the next state and its state ID or an error message, in which ChatGPT should explain the error and consider decrementing the "state_id".
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunTacticRequest'
+      responses:
+        "200":
+          description: OK
+  
+components:
+  schemas:
+    InitializeProofSearchRequest:
+      type: object
+      properties:
+        theorem_name:
+          type: string
+          description: The name of the target theorem to prove in mathlib.
+        theorem_file_path:
+          type: string
+          description: The file path of the target theorem in mathlib.
+    RunTacticRequest:
+      type: object
+      properties:
+        state_id:
+          type: integer
+          description: The ID of the state on which to run the tactic.
+        tactic:
+          type: string
+          description: The tactic to run on a state (specified by its state ID), assuming the proof search has been initialized.

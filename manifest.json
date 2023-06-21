@@ -1,0 +1,19 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "LeanDojo",
+    "name_for_model": "leandojo",
+    "description_for_human": "ChatGPT Plugin for interacting with Lean via LeanDojo.",
+    "description_for_model": "Plugin for proving user-specified theorems automatically by interacting with Lean. The user enters information of how to find a theorem (e.g., theorem name and file path). Based on the user's input, ChatGPT first initializes the proof search with the given theorem as the initial state. Then, ChatGPT will first explain the choice for the next tactic step using LaTeX and run that tactic step to the state. If the current state is not promising, ChatGPT can backtrack to previous states by decrementing the \"state_id\" parameter. If applying tactics to the current state specified by the \"state_id\" parameter returns an error message, ChatGPT should explain the error, and if repetitive errors occur, ChatGPT should decrement the \"state_id\" parameter and try a different approach on a previous state. The theorem is successfully proved if there is no unsolved goal in the current state.",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "PLUGIN_HOSTNAME/openapi.yaml",
+      "is_user_authenticated": false
+    },
+    "logo_url": "PLUGIN_HOSTNAME/logo.jpg",
+    "contact_email": "kaiyuy@caltech.edu",
+    "legal_info_url": "https://github.com/lean-dojo/LeanDojoChatGPT/blob/main/LICENSE"
+  }
+  
