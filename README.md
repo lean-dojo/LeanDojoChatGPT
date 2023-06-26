@@ -1,7 +1,7 @@
 ChatGPT Plugin for Theorem Proving in Lean
 ==========================================
 
-https://github.com/lean-dojo/LeanDojoChatGPT/assets/5431913/ce9e4699-0578-44ee-9819-929b18f16ef1
+https://github.com/lean-dojo/LeanDojoChatGPT/assets/5431913/cfbb11e0-3e52-4174-a1b5-c855f79873dd
 
 We use [LeanDojo](https://github.com/lean-dojo/LeanDojo) to build a [ChatGPT plugin](https://openai.com/blog/chatgpt-plugins), enabling ChatGPT to prove theorems by interacting with Lean. For details, please read Appendix E of our paper:
 
