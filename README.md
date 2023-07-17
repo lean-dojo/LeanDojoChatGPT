@@ -31,7 +31,7 @@ Then, go to https://chat.openai.com/?model=gpt-4-plugins. Click "Plugin store" -
 
 After the plugin is successfully installed, you can ask ChatGPT to prove theorems simply by telling it the name of the theorem and where it is defined. For example:
 ```
-I want you to prove a theorem in Lean. The theorem's name is `hello_world`, and it is defined in the file `src/example.lean` in `https://github.com/yangky11/lean-example`. Please explain the theorem to me, lay out a high-level proof plan, and then try various tactics to prove the theorem.
+I want you to prove a theorem in Lean. The theorem's name is `hello_world`, and it is defined in the file `src/example.lean`. Please explain the theorem to me, lay out a high-level proof plan, and then try various tactics to prove the theorem.
 ```
 It may take some time to initialize the proof search.
 
