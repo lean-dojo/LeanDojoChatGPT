@@ -16,7 +16,7 @@ Neural Information Processing Systems (NeurIPS), 2023
 ## Requirements
 
 * Run `pip install loguru quart quart_cors lean-dojo` to install Python dependencies.
-* Currently, only ChatGPT Plus users have access to ChatGPT plugins.
+* Currently, you need developer access to [ChatGPT plugins](https://openai.com/blog/chatgpt-plugins) in order to use this repo.
 
 
 ## Steps to Launch the Plugin
