@@ -23,9 +23,8 @@ Neural Information Processing Systems (NeurIPS), 2023
 
 First, launch the backend server:
 ```bash
-python main.py --port 23456 --url https://github.com/yangky11/lean-example --commit 5a0360e49946815cb53132638ccdd46fb1859e2a
+CONTAINER=docker python main.py --port 23456 --url https://github.com/yangky11/lean-example --commit 5a0360e49946815cb53132638ccdd46fb1859e2a
 ```
-If you encounter Docker-related errors, try setting the `CONTAINER` environment variable to `native` (see [LeanDojo's documentation](https://leandojo.readthedocs.io/en/latest/user-guide.html#advanced-running-without-docker) for details). 
 
 Then, go to https://chat.openai.com/?model=gpt-4-plugins. Click "Plugin store" -> "Develop your own plugin." Enter "localhost:23456" and click "Find manifest file." After the plugin is found, click "Install localhost plugin."
 
