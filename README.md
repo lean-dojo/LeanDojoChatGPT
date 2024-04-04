@@ -12,6 +12,7 @@ Neural Information Processing Systems (NeurIPS), 2023
 
 [![GitHub license](https://img.shields.io/github/license/MineDojo/MineDojo)](https://github.com/MineDojo/MineDojo/blob/main/LICENSE) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
+**⚠️ This repo is outdated due to changes in OpenAI's APIs: https://github.com/lean-dojo/LeanDojoChatGPT/issues/5.**
 
 ## Requirements
 
